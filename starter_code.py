@@ -35,9 +35,13 @@ def linear_search(data, target):
     """
     # TODO: Implement linear search that loops through each element and returns its index if found and -1 if not found.
     
-    pass # Delete pass and write your code here
+    for item in data:
+        if item == target:
+            return item
+        else:
+            return -1
 
-
+linear_search([5, 2, 8, 1, 9], 8)
 # ============================================================================
 # PART 2: Binary Search (Iterative)
 # ============================================================================
@@ -283,7 +287,7 @@ if __name__ == "__main__":
     
     # Uncomment these as you complete each part:
     
-    # test_search_correctness()
+    test_search_correctness()
     # benchmark_all_datasets()
     # analyze_preprocessing_costs()
     
