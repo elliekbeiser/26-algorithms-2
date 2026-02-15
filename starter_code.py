@@ -35,13 +35,13 @@ def linear_search(data, target):
     """
     # TODO: Implement linear search that loops through each element and returns its index if found and -1 if not found.
     
-    for item in data:
-        if item == target:
-            return item
+    for index in range(len(data)):
+        if data[index] == target:
+            return index
         else:
-            return -1
+            continue
+    return -1
 
-linear_search([5, 2, 8, 1, 9], 8)
 # ============================================================================
 # PART 2: Binary Search (Iterative)
 # ============================================================================
@@ -71,7 +71,20 @@ def binary_search_iterative(data, target):
     """
     # TODO: Implement iterative binary search that uses iteration to find the target. Return the index if found and -1 if not found.
     
-    pass # Delete pass and write your code here
+    left = 0
+    right = len(data) -1
+
+    while left <= right:
+        mid = (left+right) // 2
+
+        if data[mid] == target: # found
+            return mid 
+        elif data[mid] < target: #search right
+            left = mid + 1
+        else:
+            right = mid - 1 # search left
+
+    return -1 # not found
 
 
 # ============================================================================
@@ -109,7 +122,18 @@ def binary_search_recursive(data, target, left=None, right=None):
     # TODO: Implement recursive binary search that uses recursion to find the target. Return the index if found and -1 if not found. Note that default parameters are already handled above.
 
     
-    pass # Delete pass and write your code here
+    if left > right:
+        return -1
+    
+    mid = (left + right) // 2
+
+    if data[mid] == target:
+        return mid
+    
+    if data[mid] < target:
+        return binary_search_recursive(data, target, mid + 1, right)
+    else:
+        return binary_search_recursive(data, target, left, mid - 1)
 
 
 # ============================================================================
