@@ -312,7 +312,7 @@ if __name__ == "__main__":
     # Uncomment these as you complete each part:
     
     test_search_correctness()
-    # benchmark_all_datasets()
+    benchmark_all_datasets()
     # analyze_preprocessing_costs()
     
     print("\n⚠ Uncomment the test functions in the main block to run benchmarks!")
